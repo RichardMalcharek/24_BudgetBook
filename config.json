@@ -1,7 +1,1 @@
-{
-    "host": "",
-    "user": "",
-    "password": "",
-    "database": "",
-    "tbl_bookings": "" 
-}
+{"host": "localhost", "user": "root", "password": "123456", "database": "budgetbook", "tbl_bookings": "txtbookings"}
