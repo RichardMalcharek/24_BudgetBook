@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ui_mainczTaOA.ui'
+## Form generated from reading UI file 'ui_mainfpcJiE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -56,19 +56,19 @@ class Ui_frm_main(object):
         self.gridLayout_4 = QGridLayout(self.box_Database)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(-1, -1, 9, -1)
-        self.textEdit_2 = QTextEdit(self.box_Database)
-        self.textEdit_2.setObjectName(u"textEdit_2")
+        self.txt_tbl_bookings = QTextEdit(self.box_Database)
+        self.txt_tbl_bookings.setObjectName(u"txt_tbl_bookings")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.textEdit_2.sizePolicy().hasHeightForWidth())
-        self.textEdit_2.setSizePolicy(sizePolicy1)
-        self.textEdit_2.setMinimumSize(QSize(0, 35))
-        self.textEdit_2.setMaximumSize(QSize(16777215, 35))
-        self.textEdit_2.setReadOnly(True)
-        self.textEdit_2.setAcceptRichText(False)
+        sizePolicy1.setHeightForWidth(self.txt_tbl_bookings.sizePolicy().hasHeightForWidth())
+        self.txt_tbl_bookings.setSizePolicy(sizePolicy1)
+        self.txt_tbl_bookings.setMinimumSize(QSize(0, 35))
+        self.txt_tbl_bookings.setMaximumSize(QSize(16777215, 35))
+        self.txt_tbl_bookings.setReadOnly(True)
+        self.txt_tbl_bookings.setAcceptRichText(False)
 
-        self.gridLayout_4.addWidget(self.textEdit_2, 4, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.txt_tbl_bookings, 4, 0, 1, 1)
 
         self.label_2 = QLabel(self.box_Database)
         self.label_2.setObjectName(u"label_2")
@@ -80,17 +80,17 @@ class Ui_frm_main(object):
 
         self.gridLayout_4.addWidget(self.label_2, 3, 0, 1, 1)
 
-        self.textEdit = QTextEdit(self.box_Database)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setEnabled(True)
-        sizePolicy1.setHeightForWidth(self.textEdit.sizePolicy().hasHeightForWidth())
-        self.textEdit.setSizePolicy(sizePolicy1)
-        self.textEdit.setMinimumSize(QSize(0, 35))
-        self.textEdit.setMaximumSize(QSize(16777215, 35))
-        self.textEdit.setReadOnly(True)
-        self.textEdit.setAcceptRichText(False)
+        self.txt_db_name = QTextEdit(self.box_Database)
+        self.txt_db_name.setObjectName(u"txt_db_name")
+        self.txt_db_name.setEnabled(True)
+        sizePolicy1.setHeightForWidth(self.txt_db_name.sizePolicy().hasHeightForWidth())
+        self.txt_db_name.setSizePolicy(sizePolicy1)
+        self.txt_db_name.setMinimumSize(QSize(0, 35))
+        self.txt_db_name.setMaximumSize(QSize(16777215, 35))
+        self.txt_db_name.setReadOnly(True)
+        self.txt_db_name.setAcceptRichText(False)
 
-        self.gridLayout_4.addWidget(self.textEdit, 2, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.txt_db_name, 2, 0, 1, 1)
 
         self.label = QLabel(self.box_Database)
         self.label.setObjectName(u"label")
@@ -209,9 +209,9 @@ class Ui_frm_main(object):
         QWidget.setTabOrder(self.txt_host, self.txt_user)
         QWidget.setTabOrder(self.txt_user, self.txt_password)
         QWidget.setTabOrder(self.txt_password, self.btn_saveConnect)
-        QWidget.setTabOrder(self.btn_saveConnect, self.textEdit)
-        QWidget.setTabOrder(self.textEdit, self.textEdit_2)
-        QWidget.setTabOrder(self.textEdit_2, self.tabWidget)
+        QWidget.setTabOrder(self.btn_saveConnect, self.txt_db_name)
+        QWidget.setTabOrder(self.txt_db_name, self.txt_tbl_bookings)
+        QWidget.setTabOrder(self.txt_tbl_bookings, self.tabWidget)
 
         self.retranslateUi(frm_main)
 
@@ -226,7 +226,7 @@ class Ui_frm_main(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.pg_overview), QCoreApplication.translate("frm_main", u"Overview", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.pg_settings), QCoreApplication.translate("frm_main", u"Settings", None))
         self.box_Database.setTitle(QCoreApplication.translate("frm_main", u"Database", None))
-        self.textEdit_2.setHtml(QCoreApplication.translate("frm_main", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.txt_tbl_bookings.setHtml(QCoreApplication.translate("frm_main", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
@@ -235,7 +235,7 @@ class Ui_frm_main(object):
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">tbl_bookings</p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("frm_main", u"Table: Bookings", None))
-        self.textEdit.setHtml(QCoreApplication.translate("frm_main", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.txt_db_name.setHtml(QCoreApplication.translate("frm_main", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"

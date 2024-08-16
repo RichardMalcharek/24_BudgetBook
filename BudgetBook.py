@@ -71,6 +71,7 @@ class Frm_main(QMainWindow, Ui_frm_main):
             self.tabWidget.insertTab(2,self.pg_initialization, "Initialization")
             self.tabWidget.setCurrentWidget(self.pg_initialization)
             self.tryDatabase()
+            self.tryTables()
 
         else:
             self.tabWidget.insertTab(0,self.pg_initialization, "Initialization")
@@ -117,6 +118,32 @@ class Frm_main(QMainWindow, Ui_frm_main):
         else:
             self.myCursor.execute(f"CREATE DATABASE {self.dbName}")
 
+        self.myCursor.execute(f'USE {self.dbName}')
+        
+
+    def tryTables(self):
+        Tables = []
+        Tables.append(self.tbl_bookings)
+
+        tableDict = {
+            self.tbl_bookings: f'''
+                                CREATE TABLE {self.tbl_bookings} (
+                                    id INT PRIMARY KEY AUTO_INCREMENT,
+                                    username VARCHAR(255) NOT NULL,
+                                    email VARCHAR(255) NOT NULL
+                                );
+                                '''
+        }
+
+        for table in Tables:
+            self.myCursor.execute(f"SHOW TABLES LIKE '{table}';")
+            result = self.myCursor.fetchone()
+
+            if result:
+                pass
+            else:
+                self.myCursor.execute(tableDict[table])
+
 
 #### Initiate CURSOR
     def initCursor(self):
@@ -144,6 +171,8 @@ class Frm_main(QMainWindow, Ui_frm_main):
         self.txt_host.setText(self.host)
         self.txt_user.setText(self.user)
         self.txt_password.setText(self.password)
+        self.txt_db_name.setText(self.dbName)
+        self.txt_tbl_bookings.setText(self.tbl_bookings)
 
 
 #### OPEN CONNECTION
