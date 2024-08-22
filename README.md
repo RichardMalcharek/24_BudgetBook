@@ -1,17 +1,17 @@
-### Content
+## Content
 - [Reason](#reason)
 - [current status](#current-status)
 - [User Interface](#user-interface)
 - [Licence](#licence)
 - [Requirements](#requirements)
 
-### Reason
+## Reason
 
 This is a ongoing project to develop my Python and SQL coding skills in one big project. Feel free to download an adjust the script for personal use.  
 This here will be a holostic BudgetBook solution for privat money management.  
 for any questions on this feel free to contact me via LinkedIn.  
 
-### current status
+## current status
 
 update 22.08.2024  
  - created Classes Procedure() and DBConnection() in BudgetBook.py
@@ -25,18 +25,18 @@ update 16.08.2024
  - Server connection can be managed in Settings. "Save" will start the checking und creation process.   
 
 
-### User Interface
+## User Interface
 
 The UI is created in Pyside6-Designer.  
 To make it easier to adjust, i kept the ui_main.ui in this repository.  
 
-### Licence
+## Licence
 
 The idea of the licence is that anyone can use this code and further develop for privat use.  
 Limitations apply to Liability, Warranty, etc.  
 see Licence for detailed information  
 
-### Requirements  
+## Requirements  
 
 #### Python version
 
