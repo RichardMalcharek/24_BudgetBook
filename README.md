@@ -6,6 +6,11 @@ for any questions on this feel free to contact me via LinkedIn.
 
 ## current status
 
+update 22.08.2024  
+ - created Classes Procedure() and DBConnection() in BudgetBook.py
+ - reorganized procedures in BudgetBook.py 
+ - reorganized commentary for better understanding
+
 update 16.08.2024  
  - BudgetBook.py starts the userInterface  
  - It checks a connection to the MySQL Server is possible.  
