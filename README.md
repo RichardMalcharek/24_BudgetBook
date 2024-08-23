@@ -4,6 +4,7 @@
 - [User Interface](#user-interface)
 - [Licence](#licence)
 - [Requirements](#requirements)
+- [Description](#description)
 
 ## Reason
 
@@ -51,3 +52,8 @@ This was scripted in MySQL 8.0.32
 PySide6.QtWidgets  
 json  
 mysql.connector  
+
+## Description
+
+![Beispielbild](pictures/Home.PNG)
+
