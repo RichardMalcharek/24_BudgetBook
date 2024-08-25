@@ -20,7 +20,7 @@ import mysql.connector
 #### DATABASE
 #   Database Cursor         self.myCursor
 #   Database name           self.dbName
-#   Table name              self.tbl_bookings
+#   Table name              self.db_tbl_accruals
 
 # endregion ####################################################################
 
@@ -34,18 +34,20 @@ class DBConnection(Frm_main):                                                   
         super().__init__()
         self.configFile = "config.json"                                         # sets name of configuration file
 
+        self.dbName = "db_budgetbook"                                           # sets name of the Database
+        # Tables
+        self.db_tbl_accruals = "tbl_accruals"
+
     def tryConnectors(self):                                                    #### Key Function to try Connections
         if self.tryValues() and self.tryConnection():                           # == TRUE -> connection works
             self.tabWidget.insertTab(0,self.pg_overview, "Overview")
-            self.tabWidget.insertTab(1,self.pg_settings, "Settings")
             self.tabWidget.insertTab(2,self.pg_initialization, "Initialization")
-            self.tabWidget.setCurrentWidget(self.pg_initialization)
+            self.tabWidget.setCurrentWidget(self.pg_overview)
             self.tryDatabase()                                                  # Tests if Database is created
             self.tryTables()                                                    # Tests if Tables are created
         else:                                                                   # If no Connection other Tabs are hidden
             self.tabWidget.insertTab(0,self.pg_initialization, "Initialization")
             self.tabWidget.removeTab(self.tabWidget.indexOf(self.pg_overview))
-            self.tabWidget.removeTab(self.tabWidget.indexOf(self.pg_settings))
             self.tabWidget.setCurrentWidget(self.pg_initialization)
 
 # region Sub functions for tryConnectors() #####################################
@@ -84,15 +86,15 @@ class DBConnection(Frm_main):                                                   
         self.myCursor.execute(f'USE {self.dbName}')
         
     def tryTables(self):                                                        #### Tries if Tables exist, else creates them
-        Tables = []
-        Tables.append(self.tbl_bookings)
+        Tables = [self.db_tbl_accruals]
 
         tableDict = {                                                           # Dicts contains Table creation scripts
-            self.tbl_bookings: f'''
-                                CREATE TABLE {self.tbl_bookings} (
-                                    id INT PRIMARY KEY AUTO_INCREMENT,
-                                    username VARCHAR(255) NOT NULL,
-                                    email VARCHAR(255) NOT NULL
+            self.db_tbl_accruals: f'''
+                                CREATE TABLE {self.db_tbl_accruals} (
+                                    Concern VARCHAR(255),
+                                    p_amount DECIMAL(9, 2),
+                                    period INT,
+                                    a_ammount DECIMAL(9, 2)
                                 );
                                 '''
         }
@@ -122,14 +124,9 @@ class DBConnection(Frm_main):                                                   
         self.user = self.constants.get('user')
         self.password = self.constants.get('password')
 
-        self.dbName = self.constants.get('database')
-        self.tbl_bookings = self.constants.get('tbl_bookings')
-
         self.txt_host.setText(self.host)
         self.txt_user.setText(self.user)
         self.txt_password.setText(self.password)
-        self.txt_db_name.setText(self.dbName)
-        self.txt_tbl_bookings.setText(self.tbl_bookings)
 
     def saveConfig(self):                                                       #### saves changed configurations in file and retries Server Connection
         self.constants['host'] = self.txt_host.text()
@@ -163,7 +160,6 @@ class Procedure(DBConnection):                                                  
 
         # BUTTONS - Configuration
         self.btn_saveConnect.clicked.connect(self.saveConfig)                   # saves changed Server information and re-runs tryConnectors()
-
 
 
 
